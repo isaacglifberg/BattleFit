@@ -86,7 +86,7 @@ class BattleFinishView(generics.UpdateAPIView):
 
     def update(self, request, *args, **kwargs):
 
-        # Hämta battle-objektet baserat på pk från URLen
+        # Hämta battle-objektet baserat på pk från URL:en
         battle = self.get_object()
 
         if battle.status != "active":
@@ -134,6 +134,9 @@ class BattleFinishView(generics.UpdateAPIView):
         data = BattleSerializer(battle).data
         data["challenger_score"] = challenger_score
         data["opponent_score"] = opponent_score
+
+
+        
 
         return Response(data, status=status.HTTP_200_OK)
 

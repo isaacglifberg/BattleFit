@@ -15,3 +15,12 @@ class RegisterSerializer(serializers.ModelSerializer):
             password = validated_data['password']
         )
         return user
+
+
+
+class UserSerializer(serializers.ModelSerializer):
+    elo_rating = serializers.IntegerField(source="userprofile.elo_rating", read_only=True)
+
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'elo_rating']

@@ -36,11 +36,11 @@ class Battle(models.Model):
         return f"{self.challenger} vs {self.opponent} - {self.category} ({self.status})"
     
 
-class EloRating(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    rating = models.IntegerField(default=1000)
+#class EloRating(models.Model):
+    #user = models.OneToOneField(User, on_delete=models.CASCADE)
+    #rating = models.IntegerField(default=1000)
 
-    def __str__(self):
-        return f"{self.user.username} - {self.rating}"
+    #def __str__(self):
+        #return f"{self.user.username} - {self.rating}"
 
 
